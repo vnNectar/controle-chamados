@@ -1,4 +1,4 @@
-Unicarioca - Vinicius de Lima - 2024100622 
+Unicarioca - Vinicius de Lima Pereira - 2024100622 
 
 SM262424 - _PROJETO DE EXTENSÃO EM WEB BACK-END 2026/2 
  
