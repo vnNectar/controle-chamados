@@ -1,8 +1,8 @@
-# Sistema de Controle de Chamados de Manutenção
+ Sistema de Controle de Chamados de Manutenção
 
 Projeto de Web Back End desenvolvido em Python, usando Flask e SQLite.
 
-## Problema e solução
+ Problema e solução
 
 Em uma pequena empresa, os pedidos de manutenção podem chegar por mensagens ou ficar anotados em lugares diferentes. Isso dificulta o acompanhamento e pode fazer com que alguns pedidos sejam esquecidos.
 
@@ -21,13 +21,17 @@ O sistema não possui uma interface visual. As operações são realizadas por r
 
 ## Tecnologias utilizadas
 
-| Tecnologia | Motivo da escolha |
-|---|---|
-| Python | Já foi estudado durante o curso e permite escrever um código fácil de acompanhar. |
-| Flask | Facilita a criação das rotas da API e atende ao tamanho do projeto. |
-| SQLite | Salva os dados em um arquivo e não precisa de um servidor de banco separado. |
-| Ambiente virtual | Mantém as dependências do projeto organizadas e separadas de outros projetos. |
-| Git e GitHub | Permitem registrar as alterações e disponibilizar o trabalho. |
+ Tecnologia e Motivo da escolha 
+
+  Python - Já foi estudado durante o curso e permite escrever um código fácil de acompanhar. 
+  
+  Flask - Facilita a criação das rotas da API e atende ao tamanho do projeto. 
+  
+  SQLite - Salva os dados em um arquivo e não precisa de um servidor de banco separado.
+  
+  Ambiente  virtual - Mantém as dependências do projeto organizadas e separadas de outros projetos. 
+  
+  Git e GitHub - Permitem registrar as alterações e disponibilizar o trabalho. 
 
 A infraestrutura funciona no próprio computador. Isso simplifica a configuração e permite executar e demonstrar o projeto sem contratar hospedagem.
 
@@ -35,13 +39,17 @@ A infraestrutura funciona no próprio computador. Isso simplifica a configuraç�
 
 Foi utilizada uma arquitetura monolítica, ou seja, o sistema funciona como uma única aplicação. Para manter o código organizado, as responsabilidades foram divididas:
 
-| Arquivo | Responsabilidade |
-|---|---|
-| `app.py` | Rotas da API, validações, verificação da chave e respostas |
-| `banco.py` | Conexão com o banco e operações de cadastro, consulta, atualização e exclusão |
-| `requirements.txt` | Dependência necessária para executar o projeto |
-| `.gitignore` | Define quais arquivos não devem ser enviados ao GitHub |
-| `README.md` | Documentação do sistema |
+ Arquivo e Responsabilidade
+ 
+ `app.py` - Rotas da API, validações, verificação da chave e respostas 
+ 
+ `banco.py` - Conexão com o banco e operações de cadastro, consulta, atualização e exclusão 
+ 
+ `requirements.txt` - Dependência necessária para executar o projeto 
+ 
+ `.gitignore` - Define quais arquivos não devem ser enviados ao GitHub 
+ 
+ `README.md` - Documentação do sistema 
 
 A integração acontece por chamadas de funções. O Flask recebe a requisição, o código verifica os dados e utiliza as funções de `banco.py` para acessar o SQLite. Depois, a API retorna o resultado em JSON.
 
@@ -49,14 +57,19 @@ A integração acontece por chamadas de funções. O Flask recebe a requisição
 
 O banco é criado automaticamente no arquivo `chamados.db`. Ele possui uma tabela chamada `chamados`, com os campos:
 
-| Campo | Informação armazenada |
-|---|---|
-| `id` | Identificador gerado automaticamente |
-| `titulo` | Resumo do problema |
-| `descricao` | Detalhes do problema |
-| `local` | Local que precisa de manutenção |
-| `status` | Situação atual, começando como `aberto` |
-| `criado_em` | Data e hora do cadastro, em UTC |
+ Campo  e Informação armazenada
+ 
+ `id` - Identificador gerado automaticamente 
+ 
+ `titulo` - Resumo do problema 
+ 
+ `descricao` - Detalhes do problema 
+ 
+ `local` - Local que precisa de manutenção 
+ 
+ `status` - Situação atual, começando como `aberto` 
+ 
+ `criado_em` - Data e hora do cadastro, em UTC 
 
 Título, descrição e local são obrigatórios. A API aceita até 100 caracteres no título e no local, e até 1.000 na descrição.
 
@@ -64,15 +77,21 @@ Título, descrição e local são obrigatórios. A API aceita até 100 caractere
 
 Endereço base: `http://127.0.0.1:5000`
 
-| Método | Rota | Operação |
-|---|---|---|
-| GET | `/` | Verificar se a API está funcionando |
-| GET | `/chamados` | Listar chamados |
-| GET | `/chamados?status=aberto` | Filtrar por status |
-| GET | `/chamados/{id}` | Consultar pelo ID |
-| POST | `/chamados` | Cadastrar |
-| PATCH | `/chamados/{id}` | Atualizar o status |
-| DELETE | `/chamados/{id}` | Excluir |
+ Método, Rota e Operação 
+ 
+ GET  `/`  Verificar se a API está funcionando 
+
+ GET  `/chamados` - Listar chamados 
+ 
+ GET  `/chamados?status=aberto` - Filtrar por status
+
+ GET  `/chamados/{id}` - Consultar pelo ID 
+ 
+ POST  `/chamados` - Cadastrar 
+ 
+ PATCH  `/chamados/{id}` - Atualizar o status 
+ 
+ DELETE  `/chamados/{id}` - Excluir 
 
 O `{id}` deve ser substituído pelo número do chamado.
 
