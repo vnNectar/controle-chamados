@@ -1,3 +1,7 @@
+Unicarioca - Vinicius de Lima - 2024100622 
+
+SM262424 - _PROJETO DE EXTENSÃO EM WEB BACK-END 2026/2 
+ 
  # Sistema de Controle de Chamados de Manutenção
 
 Projeto de Web Back End desenvolvido em Python, usando Flask e SQLite.
